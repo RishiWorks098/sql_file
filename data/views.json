@@ -1,0 +1,41 @@
+[
+  { "group": "SQL Views & Materialized Views", "question": "1. Create a view to display employee name, salary, and department number.", "query": "CREATE VIEW emp_sal_dept AS SELECT ENAME, SAL, DEPTNO FROM EMP;", "output_table": [
+      { "ENAME": "KING", "SAL": 5000, "DEPTNO": 10 }, { "ENAME": "BLAKE", "SAL": 2850, "DEPTNO": 30 },
+      { "ENAME": "CLARK", "SAL": 2450, "DEPTNO": 10 }, { "ENAME": "JONES", "SAL": 2975, "DEPTNO": 20 },
+      { "ENAME": "SCOTT", "SAL": 3000, "DEPTNO": 20 }, { "ENAME": "FORD", "SAL": 3000, "DEPTNO": 20 },
+      { "ENAME": "SMITH", "SAL": 800, "DEPTNO": 20 }, { "ENAME": "ALLEN", "SAL": 1600, "DEPTNO": 30 },
+      { "ENAME": "WARD", "SAL": 1250, "DEPTNO": 30 }, { "ENAME": "MARTIN", "SAL": 1250, "DEPTNO": 30 },
+      { "ENAME": "TURNER", "SAL": 1500, "DEPTNO": 30 }, { "ENAME": "ADAMS", "SAL": 1100, "DEPTNO": 20 },
+      { "ENAME": "JAMES", "SAL": 950, "DEPTNO": 30 }, { "ENAME": "MILLER", "SAL": 1300, "DEPTNO": 10 }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "2. Create a view to display employee name and department name by joining EMP and DEPT.", "query": "CREATE VIEW emp_dept_view AS SELECT E.ENAME, D.DNAME FROM EMP E JOIN DEPT D ON E.DEPTNO = D.DEPTNO;", "output_table": [
+      { "ENAME": "KING", "DNAME": "ACCOUNTING" }, { "ENAME": "SMITH", "DNAME": "RESEARCH" },
+      { "ENAME": "ALLEN", "DNAME": "SALES" }, { "ENAME": "ADAMS", "DNAME": "RESEARCH" }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "3. Create a view to display employee name, job, and annual salary (SAL * 12).", "query": "CREATE VIEW emp_annual_sal AS SELECT ENAME, JOB, SAL * 12 AS ANNUAL_SALARY FROM EMP;", "output_table": [
+      { "ENAME": "KING", "JOB": "PRESIDENT", "ANNUAL_SALARY": 60000 },
+      { "ENAME": "SMITH", "JOB": "CLERK", "ANNUAL_SALARY": 9600 }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "4. Create a view for employees in department 20 with WITH CHECK OPTION.", "query": "CREATE VIEW dept20_view AS SELECT * FROM EMP WHERE DEPTNO = 20 WITH CHECK OPTION;", "output_table": [
+      { "ENAME": "SMITH", "DEPTNO": 20 }, { "ENAME": "JONES", "DEPTNO": 20 },
+      { "ENAME": "SCOTT", "DEPTNO": 20 }, { "ENAME": "FORD", "DEPTNO": 20 }, { "ENAME": "ADAMS", "DEPTNO": 20 }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "5. Create a READ ONLY view to display employee details.", "query": "CREATE VIEW emp_readonly AS SELECT * FROM EMP WITH READ ONLY;", "output_table": [
+      { "ENAME": "KING", "JOB": "PRESIDENT" }, { "ENAME": "BLAKE", "JOB": "MANAGER" }, "Note: This view cannot be updated (DML not allowed)"
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "6. Create a materialized view to store employee name and salary.", "query": "CREATE MATERIALIZED VIEW mv_emp_sal AS SELECT ENAME, SAL FROM EMP;", "output_table": [
+      { "ENAME": "KING", "SAL": 5000 }, { "ENAME": "SMITH", "SAL": 800 }, "Note: Data is physically stored in the database"
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "7. Create a materialized view to store department-wise total salary.", "query": "CREATE MATERIALIZED VIEW mv_dept_total_sal AS SELECT DEPTNO, SUM(SAL) AS TOTAL_SAL FROM EMP GROUP BY DEPTNO;", "output_table": [
+      { "DEPTNO": 10, "TOTAL_SAL": 8750 }, { "DEPTNO": 20, "TOTAL_SAL": 10875 }, { "DEPTNO": 30, "TOTAL_SAL": 9400 }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "8. Create a materialized view with the BUILD DEFERRED option.", "query": "CREATE MATERIALIZED VIEW mv_deferred BUILD DEFERRED AS SELECT * FROM EMP;", "output_table": [
+      { "STATUS": "Empty", "REASON": "BUILD DEFERRED means data will be populated later manually." }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "9. Create a complex view to display department name and the highest salary.", "query": "CREATE VIEW dept_highest_sal AS SELECT D.DNAME, MAX(E.SAL) AS MAX_SAL FROM EMP E JOIN DEPT D ON E.DEPTNO = D.DEPTNO GROUP BY D.DNAME;", "output_table": [
+      { "DNAME": "ACCOUNTING", "MAX_SAL": 5000 }, { "DNAME": "RESEARCH", "MAX_SAL": 3000 }, { "DNAME": "SALES", "MAX_SAL": 2850 }
+  ]},
+  { "group": "SQL Views & Materialized Views", "question": "10. Create a view that hides salary but shows name and department for security.", "query": "CREATE VIEW secure_emp_view AS SELECT ENAME, DEPTNO FROM EMP;", "output_table": [
+      { "ENAME": "KING", "DEPTNO": 10 }, { "ENAME": "SMITH", "DEPTNO": 20 }, "Note: SAL column is hidden for security."
+  ]}
+]

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Problems - Janvi Arya Works</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Janvi Arya Works</div>
+        <div class="nav-links">
+            <a href="index.html"> Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="practice-container">
+        <aside class="sidebar">
+            <h3 id="catTitle">Problems</h3>
+            <ul id="problemList">
+                </ul>
+        </aside>
+
+        <main class="main-display">
+            <div id="welcomeMsg">
+                <h2>Welcome!</h2>
+                <p>Please select a problem from the left sidebar to view the solution.</p>
+            </div>
+
+            <div id="contentBox" style="display: none;">
+                <div class="display-section">
+                    <label>QUESTION</label>
+                    <p id="problemQuestion" class="q-text"></p>
+                </div>
+
+                <div class="display-section">
+                    <label>SQL / PLSQL CODE</label>
+                    <div class="code-box">
+                        <pre id="queryDisplay"></pre>
+                    </div>
+                </div>
+
+                <div class="display-section">
+                    <label>ORACLE OUTPUT</label>
+                    <pre id="outputDisplay" class="output-box"></pre>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

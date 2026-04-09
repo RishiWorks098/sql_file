@@ -1,0 +1,200 @@
+[
+  { "group": " WHERE Clause", "question": "1. Display employees whose salary is greater than 3000.", "query": "SELECT * FROM EMP WHERE SAL > 3000;", "output_table": [{ "EMPNO": 7839, "ENAME": "KING", "JOB": "PRESIDENT", "SAL": 5000, "DEPTNO": 10 }] },
+  { "group": " WHERE Clause", "question": "2. Display employees working in department 10.", "query": "SELECT * FROM EMP WHERE DEPTNO = 10;", "output_table": [
+      { "EMPNO": 7839, "ENAME": "KING", "JOB": "PRESIDENT", "DEPTNO": 10 },
+      { "EMPNO": 7782, "ENAME": "CLARK", "JOB": "MANAGER", "DEPTNO": 10 },
+      { "EMPNO": 7934, "ENAME": "MILLER", "JOB": "CLERK", "DEPTNO": 10 }
+  ]},
+  { "group": " WHERE Clause", "question": "3. Display employees whose job is 'CLERK'.", "query": "SELECT * FROM EMP WHERE JOB = 'CLERK';", "output_table": [
+      { "EMPNO": 7369, "ENAME": "SMITH", "SAL": 800 },
+      { "EMPNO": 7876, "ENAME": "ADAMS", "SAL": 1100 },
+      { "EMPNO": 7900, "ENAME": "JAMES", "SAL": 950 },
+      { "EMPNO": 7934, "ENAME": "MILLER", "SAL": 1300 }
+  ]},
+  { "group": " WHERE Clause", "question": "4. Display employees hired after 01-JAN-81.", "query": "SELECT * FROM EMP WHERE HIREDATE > '01-JAN-81';", "output_table": [
+      { "ENAME": "KING", "HIREDATE": "17-NOV-81" }, { "ENAME": "BLAKE", "HIREDATE": "01-MAY-81" },
+      { "ENAME": "CLARK", "HIREDATE": "09-JUN-81" }, { "ENAME": "JONES", "HIREDATE": "02-APR-81" },
+      { "ENAME": "SCOTT", "HIREDATE": "19-APR-87" }, { "ENAME": "FORD", "HIREDATE": "03-DEC-81" },
+      { "ENAME": "MARTIN", "HIREDATE": "28-SEP-81" }, { "ENAME": "TURNER", "HIREDATE": "08-SEP-81" },
+      { "ENAME": "ADAMS", "HIREDATE": "23-MAY-87" }, { "ENAME": "JAMES", "HIREDATE": "03-DEC-81" },
+      { "ENAME": "MILLER", "HIREDATE": "23-JAN-82" }, { "ENAME": "ALLEN", "HIREDATE": "20-FEB-81" },
+      { "ENAME": "WARD", "HIREDATE": "22-FEB-81" }
+  ]},
+  { "group": " WHERE Clause", "question": "5. Display employees whose salary is less than 1500.", "query": "SELECT * FROM EMP WHERE SAL < 1500;", "output_table": [
+      { "ENAME": "SMITH", "SAL": 800 }, { "ENAME": "WARD", "SAL": 1250 }, { "ENAME": "MARTIN", "SAL": 1250 },
+      { "ENAME": "ADAMS", "SAL": 1100 }, { "ENAME": "JAMES", "SAL": 950 }, { "ENAME": "MILLER", "SAL": 1300 }
+  ]},
+  { "group": " WHERE Clause", "question": "6. Display employees whose salary is > 2000 and job is 'MANAGER'.", "query": "SELECT * FROM EMP WHERE SAL > 2000 AND JOB = 'MANAGER';", "output_table": [
+      { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "CLARK", "SAL": 2450 }, { "ENAME": "JONES", "SAL": 2975 }
+  ]},
+  { "group": " WHERE Clause", "question": "7. Display employees working in department 10 or 20.", "query": "SELECT * FROM EMP WHERE DEPTNO IN (10, 20);", "output_table": [
+      { "ENAME": "KING", "DEPTNO": 10 }, { "ENAME": "CLARK", "DEPTNO": 10 }, { "ENAME": "MILLER", "DEPTNO": 10 },
+      { "ENAME": "JONES", "DEPTNO": 20 }, { "ENAME": "SCOTT", "DEPTNO": 20 }, { "ENAME": "FORD", "DEPTNO": 20 },
+      { "ENAME": "SMITH", "DEPTNO": 20 }, { "ENAME": "ADAMS", "DEPTNO": 20 }
+  ]},
+  { "group": " WHERE Clause", "question": "8. Display employees whose job is 'SALESMAN' and salary > 1500.", "query": "SELECT * FROM EMP WHERE JOB = 'SALESMAN' AND SAL > 1500;", "output_table": [
+      { "ENAME": "ALLEN", "JOB": "SALESMAN", "SAL": 1600 }
+  ]},
+  { "group": " WHERE Clause", "question": "9. Display employees who are either CLERK or ANALYST.", "query": "SELECT * FROM EMP WHERE JOB IN ('CLERK', 'ANALYST');", "output_table": [
+      { "ENAME": "SCOTT", "JOB": "ANALYST" }, { "ENAME": "FORD", "JOB": "ANALYST" }, { "ENAME": "SMITH", "JOB": "CLERK" },
+      { "ENAME": "ADAMS", "JOB": "CLERK" }, { "ENAME": "JAMES", "JOB": "CLERK" }, { "ENAME": "MILLER", "JOB": "CLERK" }
+  ]},
+  { "group": " WHERE Clause", "question": "10. Display employees hired before 1982 and working in department 30.", "query": "SELECT * FROM EMP WHERE HIREDATE < '01-JAN-82' AND DEPTNO = 30;", "output_table": [
+      { "ENAME": "BLAKE", "DEPTNO": 30 }, { "ENAME": "ALLEN", "DEPTNO": 30 }, { "ENAME": "WARD", "DEPTNO": 30 },
+      { "ENAME": "MARTIN", "DEPTNO": 30 }, { "ENAME": "TURNER", "DEPTNO": 30 }, { "ENAME": "JAMES", "DEPTNO": 30 }
+  ]},
+  { "group": " WHERE Clause", "question": "11. Display employees working in departments 10, 20, or 30.", "query": "SELECT * FROM EMP WHERE DEPTNO IN (10, 20, 30);", "output_table": [
+      { "ENAME": "KING", "DEPTNO": 10 }, { "ENAME": "BLAKE", "DEPTNO": 30 }, { "ENAME": "JONES", "DEPTNO": 20 },
+      { "ENAME": "SCOTT", "DEPTNO": 20 }, { "ENAME": "FORD", "DEPTNO": 20 }, { "ENAME": "SMITH", "DEPTNO": 20 },
+      { "ENAME": "ALLEN", "DEPTNO": 30 }, { "ENAME": "WARD", "DEPTNO": 30 }, { "ENAME": "MARTIN", "DEPTNO": 30 },
+      { "ENAME": "TURNER", "DEPTNO": 30 }, { "ENAME": "ADAMS", "DEPTNO": 20 }, { "ENAME": "JAMES", "DEPTNO": 30 },
+      { "ENAME": "MILLER", "DEPTNO": 10 }, { "ENAME": "CLARK", "DEPTNO": 10 }
+  ]},
+  { "group": " WHERE Clause", "question": "12. Display employees whose job is not MANAGER or CLERK.", "query": "SELECT * FROM EMP WHERE JOB NOT IN ('MANAGER', 'CLERK');", "output_table": [
+      { "ENAME": "KING", "JOB": "PRESIDENT" }, { "ENAME": "SCOTT", "JOB": "ANALYST" }, { "ENAME": "FORD", "JOB": "ANALYST" },
+      { "ENAME": "ALLEN", "JOB": "SALESMAN" }, { "ENAME": "WARD", "JOB": "SALESMAN" }, { "ENAME": "MARTIN", "JOB": "SALESMAN" },
+      { "ENAME": "TURNER", "JOB": "SALESMAN" }
+  ]},
+  { "group": " WHERE Clause", "question": "13. Display employees whose department is not 10.", "query": "SELECT * FROM EMP WHERE DEPTNO != 10;", "output_table": [
+      { "ENAME": "BLAKE", "DEPTNO": 30 }, { "ENAME": "JONES", "DEPTNO": 20 }, { "ENAME": "SCOTT", "DEPTNO": 20 },
+      { "ENAME": "FORD", "DEPTNO": 20 }, { "ENAME": "SMITH", "DEPTNO": 20 }, { "ENAME": "ALLEN", "DEPTNO": 30 },
+      { "ENAME": "WARD", "DEPTNO": 30 }, { "ENAME": "MARTIN", "DEPTNO": 30 }, { "ENAME": "TURNER", "DEPTNO": 30 },
+      { "ENAME": "ADAMS", "DEPTNO": 20 }, { "ENAME": "JAMES", "DEPTNO": 30 }
+  ]},
+  { "group": " WHERE Clause", "question": "14. Display employees whose salary is between 1000 and 3000.", "query": "SELECT * FROM EMP WHERE SAL BETWEEN 1000 AND 3000;", "output_table": [
+      { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "CLARK", "SAL": 2450 }, { "ENAME": "JONES", "SAL": 2975 },
+      { "ENAME": "SCOTT", "SAL": 3000 }, { "ENAME": "FORD", "SAL": 3000 }, { "ENAME": "ALLEN", "SAL": 1600 },
+      { "ENAME": "WARD", "SAL": 1250 }, { "ENAME": "MARTIN", "SAL": 1250 }, { "ENAME": "TURNER", "SAL": 1500 },
+      { "ENAME": "ADAMS", "SAL": 1100 }, { "ENAME": "MILLER", "SAL": 1300 }
+  ]},
+  { "group": " WHERE Clause", "question": "15. Display employees hired between 01-JAN-81 and 31-DEC-81.", "query": "SELECT * FROM EMP WHERE HIREDATE BETWEEN '01-JAN-81' AND '31-DEC-81';", "output_table": [
+      { "ENAME": "KING", "HIREDATE": "17-NOV-81" }, { "ENAME": "BLAKE", "HIREDATE": "01-MAY-81" },
+      { "ENAME": "CLARK", "HIREDATE": "09-JUN-81" }, { "ENAME": "JONES", "HIREDATE": "02-APR-81" },
+      { "ENAME": "FORD", "HIREDATE": "03-DEC-81" }, { "ENAME": "ALLEN", "HIREDATE": "20-FEB-81" },
+      { "ENAME": "WARD", "HIREDATE": "22-FEB-81" }, { "ENAME": "MARTIN", "HIREDATE": "28-SEP-81" },
+      { "ENAME": "TURNER", "HIREDATE": "08-SEP-81" }, { "ENAME": "JAMES", "HIREDATE": "03-DEC-81" }
+  ]},
+  { "group": " WHERE Clause", "question": "16. Display employees whose commission is NULL.", "query": "SELECT * FROM EMP WHERE COMM IS NULL;", "output_table": [
+      { "ENAME": "KING", "COMM": null }, { "ENAME": "BLAKE", "COMM": null }, { "ENAME": "CLARK", "COMM": null },
+      { "ENAME": "JONES", "COMM": null }, { "ENAME": "SCOTT", "COMM": null }, { "ENAME": "FORD", "COMM": null },
+      { "ENAME": "SMITH", "COMM": null }, { "ENAME": "ADAMS", "COMM": null }, { "ENAME": "JAMES", "COMM": null },
+      { "ENAME": "MILLER", "COMM": null }
+  ]},
+  { "group": " WHERE Clause", "question": "17. Display employees who are getting commission (NOT NULL).", "query": "SELECT * FROM EMP WHERE COMM IS NOT NULL;", "output_table": [
+      { "ENAME": "ALLEN", "COMM": 300 }, { "ENAME": "WARD", "COMM": 500 }, { "ENAME": "MARTIN", "COMM": 1400 },
+      { "ENAME": "TURNER", "COMM": 0 }
+  ]},
+  { "group": " WHERE Clause", "question": "18. Display employees who do not have a manager (MGR is NULL).", "query": "SELECT * FROM EMP WHERE MGR IS NULL;", "output_table": [
+      { "ENAME": "KING", "JOB": "PRESIDENT", "MGR": null }
+  ]},
+  { "group": " WHERE Clause", "question": "19. Display employees whose manager is not NULL.", "query": "SELECT * FROM EMP WHERE MGR IS NOT NULL;", "output_table": [
+      { "ENAME": "BLAKE", "MGR": 7839 }, { "ENAME": "CLARK", "MGR": 7839 }, { "ENAME": "JONES", "MGR": 7839 },
+      { "ENAME": "SCOTT", "MGR": 7566 }, { "ENAME": "FORD", "MGR": 7566 }, { "ENAME": "SMITH", "MGR": 7902 },
+      { "ENAME": "ALLEN", "MGR": 7698 }, { "ENAME": "WARD", "MGR": 7698 }, { "ENAME": "MARTIN", "MGR": 7698 },
+      { "ENAME": "TURNER", "MGR": 7698 }, { "ENAME": "ADAMS", "MGR": 7788 }, { "ENAME": "JAMES", "MGR": 7698 },
+      { "ENAME": "MILLER", "MGR": 7782 }
+  ]},
+  { "group": " WHERE Clause", "question": "20. Display employees whose commission is NULL and salary > 2000.", "query": "SELECT * FROM EMP WHERE COMM IS NULL AND SAL > 2000;", "output_table": [
+      { "ENAME": "KING", "SAL": 5000 }, { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "CLARK", "SAL": 2450 },
+      { "ENAME": "JONES", "SAL": 2975 }, { "ENAME": "SCOTT", "SAL": 3000 }, { "ENAME": "FORD", "SAL": 3000 }
+  ]},
+  { "group": " WHERE Clause", "question": "21. Display employees whose commission is NULL or salary > 3000.", "query": "SELECT * FROM EMP WHERE COMM IS NULL OR SAL > 3000;", "output_table": [
+      { "ENAME": "KING", "SAL": 5000 }, { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "CLARK", "SAL": 2450 },
+      { "ENAME": "JONES", "SAL": 2975 }, { "ENAME": "SCOTT", "SAL": 3000 }, { "ENAME": "FORD", "SAL": 3000 },
+      { "ENAME": "SMITH", "SAL": 800 }, { "ENAME": "ADAMS", "SAL": 1100 }, { "ENAME": "JAMES", "SAL": 950 },
+      { "ENAME": "MILLER", "SAL": 1300 }
+  ]},
+  { "group": " WHERE Clause", "question": "22. Display employees whose commission is NOT NULL and department is 30.", "query": "SELECT * FROM EMP WHERE COMM IS NOT NULL AND DEPTNO = 30;", "output_table": [
+      { "ENAME": "ALLEN", "COMM": 300, "DEPTNO": 30 }, { "ENAME": "WARD", "COMM": 500, "DEPTNO": 30 },
+      { "ENAME": "MARTIN", "COMM": 1400, "DEPTNO": 30 }, { "ENAME": "TURNER", "COMM": 0, "DEPTNO": 30 }
+  ]},
+  { "group": " WHERE Clause", "question": "23. Display employees who do not earn commission and work in department 20.", "query": "SELECT * FROM EMP WHERE COMM IS NULL AND DEPTNO = 20;", "output_table": [
+      { "ENAME": "JONES", "DEPTNO": 20 }, { "ENAME": "SCOTT", "DEPTNO": 20 }, { "ENAME": "FORD", "DEPTNO": 20 },
+      { "ENAME": "SMITH", "DEPTNO": 20 }, { "ENAME": "ADAMS", "DEPTNO": 20 }
+  ]},
+  { "group": " WHERE Clause", "question": "24. Display employees whose manager is NULL and salary > 4000.", "query": "SELECT * FROM EMP WHERE MGR IS NULL AND SAL > 4000;", "output_table": [
+      { "ENAME": "KING", "SAL": 5000, "MGR": null }
+  ]},
+  { "group": " WHERE Clause", "question": "25. Display employees whose commission is NULL but job is 'SALESMAN'.", "query": "SELECT * FROM EMP WHERE COMM IS NULL AND JOB = 'SALESMAN';", "output_table": [] },
+  { "group": " WHERE Clause", "question": "26. Display employees whose name starts with 'S'.", "query": "SELECT * FROM EMP WHERE ENAME LIKE 'S%';", "output_table": [
+      { "ENAME": "SCOTT", "SAL": 3000 }, { "ENAME": "SMITH", "SAL": 800 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "27. Display all employees ordered by salary in ascending order.", "query": "SELECT * FROM EMP ORDER BY SAL ASC;", "output_table": [
+      { "ENAME": "SMITH", "SAL": 800 }, { "ENAME": "JAMES", "SAL": 950 }, { "ENAME": "ADAMS", "SAL": 1100 },
+      { "ENAME": "WARD", "SAL": 1250 }, { "ENAME": "MARTIN", "SAL": 1250 }, { "ENAME": "MILLER", "SAL": 1300 },
+      { "ENAME": "TURNER", "SAL": 1500 }, { "ENAME": "ALLEN", "SAL": 1600 }, { "ENAME": "CLARK", "SAL": 2450 },
+      { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "JONES", "SAL": 2975 }, { "ENAME": "SCOTT", "SAL": 3000 },
+      { "ENAME": "FORD", "SAL": 3000 }, { "ENAME": "KING", "SAL": 5000 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "28. Display all employees ordered by salary in descending order.", "query": "SELECT * FROM EMP ORDER BY SAL DESC;", "output_table": [
+      { "ENAME": "KING", "SAL": 5000 }, { "ENAME": "SCOTT", "SAL": 3000 }, { "ENAME": "FORD", "SAL": 3000 },
+      { "ENAME": "JONES", "SAL": 2975 }, { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "CLARK", "SAL": 2450 },
+      { "ENAME": "ALLEN", "SAL": 1600 }, { "ENAME": "TURNER", "SAL": 1500 }, { "ENAME": "MILLER", "SAL": 1300 },
+      { "ENAME": "WARD", "SAL": 1250 }, { "ENAME": "MARTIN", "SAL": 1250 }, { "ENAME": "ADAMS", "SAL": 1100 },
+      { "ENAME": "JAMES", "SAL": 950 }, { "ENAME": "SMITH", "SAL": 800 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "29. Display employees ordered by hire date.", "query": "SELECT * FROM EMP ORDER BY HIREDATE;", "output_table": [
+      { "ENAME": "SMITH", "HIREDATE": "17-DEC-80" }, { "ENAME": "ALLEN", "HIREDATE": "20-FEB-81" },
+      { "ENAME": "WARD", "HIREDATE": "22-FEB-81" }, { "ENAME": "JONES", "HIREDATE": "02-APR-81" },
+      { "ENAME": "BLAKE", "HIREDATE": "01-MAY-81" }, { "ENAME": "CLARK", "HIREDATE": "09-JUN-81" },
+      { "ENAME": "TURNER", "HIREDATE": "08-SEP-81" }, { "ENAME": "MARTIN", "HIREDATE": "28-SEP-81" },
+      { "ENAME": "KING", "HIREDATE": "17-NOV-81" }, { "ENAME": "JAMES", "HIREDATE": "03-DEC-81" },
+      { "ENAME": "FORD", "HIREDATE": "03-DEC-81" }, { "ENAME": "MILLER", "HIREDATE": "23-JAN-82" },
+      { "ENAME": "SCOTT", "HIREDATE": "19-APR-87" }, { "ENAME": "ADAMS", "HIREDATE": "23-MAY-87" }
+  ]},
+  { "group": " ORDER BY Clause", "question": "30. Display employees ordered by department number and salary.", "query": "SELECT * FROM EMP ORDER BY DEPTNO, SAL;", "output_table": [
+      { "ENAME": "MILLER", "DEPTNO": 10, "SAL": 1300 }, { "ENAME": "CLARK", "DEPTNO": 10, "SAL": 2450 },
+      { "ENAME": "KING", "DEPTNO": 10, "SAL": 5000 }, { "ENAME": "SMITH", "DEPTNO": 20, "SAL": 800 },
+      { "ENAME": "ADAMS", "DEPTNO": 20, "SAL": 1100 }, { "ENAME": "JONES", "DEPTNO": 20, "SAL": 2975 },
+      { "ENAME": "SCOTT", "DEPTNO": 20, "SAL": 3000 }, { "ENAME": "FORD", "DEPTNO": 20, "SAL": 3000 },
+      { "ENAME": "JAMES", "DEPTNO": 30, "SAL": 950 }, { "ENAME": "WARD", "DEPTNO": 30, "SAL": 1250 },
+      { "ENAME": "MARTIN", "DEPTNO": 30, "SAL": 1250 }, { "ENAME": "TURNER", "DEPTNO": 30, "SAL": 1500 },
+      { "ENAME": "ALLEN", "DEPTNO": 30, "SAL": 1600 }, { "ENAME": "BLAKE", "DEPTNO": 30, "SAL": 2850 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "31. Display employees ordered by job (ascending) and salary (descending).", "query": "SELECT * FROM EMP ORDER BY JOB ASC, SAL DESC;", "output_table": [
+      { "ENAME": "SCOTT", "JOB": "ANALYST", "SAL": 3000 }, { "ENAME": "FORD", "JOB": "ANALYST", "SAL": 3000 },
+      { "ENAME": "MILLER", "JOB": "CLERK", "SAL": 1300 }, { "ENAME": "ADAMS", "JOB": "CLERK", "SAL": 1100 },
+      { "ENAME": "JAMES", "JOB": "CLERK", "SAL": 950 }, { "ENAME": "SMITH", "JOB": "CLERK", "SAL": 800 },
+      { "ENAME": "JONES", "JOB": "MANAGER", "SAL": 2975 }, { "ENAME": "BLAKE", "JOB": "MANAGER", "SAL": 2850 },
+      { "ENAME": "CLARK", "JOB": "MANAGER", "SAL": 2450 }, { "ENAME": "KING", "JOB": "PRESIDENT", "SAL": 5000 },
+      { "ENAME": "ALLEN", "JOB": "SALESMAN", "SAL": 1600 }, { "ENAME": "TURNER", "JOB": "SALESMAN", "SAL": 1500 },
+      { "ENAME": "WARD", "JOB": "SALESMAN", "SAL": 1250 }, { "ENAME": "MARTIN", "JOB": "SALESMAN", "SAL": 1250 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "32. Display employee names ordered alphabetically.", "query": "SELECT ENAME FROM EMP ORDER BY ENAME;", "output_table": [
+      { "ENAME": "ADAMS" }, { "ENAME": "ALLEN" }, { "ENAME": "BLAKE" }, { "ENAME": "CLARK" }, { "ENAME": "FORD" },
+      { "ENAME": "JAMES" }, { "ENAME": "JONES" }, { "ENAME": "KING" }, { "ENAME": "MARTIN" }, { "ENAME": "MILLER" },
+      { "ENAME": "SCOTT" }, { "ENAME": "SMITH" }, { "ENAME": "TURNER" }, { "ENAME": "WARD" }
+  ]},
+  { "group": " ORDER BY Clause", "question": "33. Display employees of department 30 ordered by salary.", "query": "SELECT * FROM EMP WHERE DEPTNO = 30 ORDER BY SAL;", "output_table": [
+      { "ENAME": "JAMES", "SAL": 950 }, { "ENAME": "WARD", "SAL": 1250 }, { "ENAME": "MARTIN", "SAL": 1250 },
+      { "ENAME": "TURNER", "SAL": 1500 }, { "ENAME": "ALLEN", "SAL": 1600 }, { "ENAME": "BLAKE", "SAL": 2850 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "34. Display employees ordered by annual salary (Salary * 12).", "query": "SELECT ENAME, SAL * 12 AS ANNUAL_SAL FROM EMP ORDER BY ANNUAL_SAL;", "output_table": [
+      { "ENAME": "SMITH", "ANNUAL_SAL": 9600 }, { "ENAME": "JAMES", "ANNUAL_SAL": 11400 }, { "ENAME": "ADAMS", "ANNUAL_SAL": 13200 },
+      { "ENAME": "KING", "ANNUAL_SAL": 60000 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "35. Display employees ordered by commission.", "query": "SELECT * FROM EMP ORDER BY COMM;", "output_table": [
+      { "ENAME": "TURNER", "COMM": 0 }, { "ENAME": "ALLEN", "COMM": 300 }, { "ENAME": "WARD", "COMM": 500 },
+      { "ENAME": "MARTIN", "COMM": 1400 }, { "ENAME": "KING", "COMM": null }
+  ]},
+  { "group": " ORDER BY Clause", "question": "36. Display employees whose commission is NOT NULL, ordered by commission.", "query": "SELECT * FROM EMP WHERE COMM IS NOT NULL ORDER BY COMM;", "output_table": [
+      { "ENAME": "TURNER", "COMM": 0 }, { "ENAME": "ALLEN", "COMM": 300 }, { "ENAME": "WARD", "COMM": 500 },
+      { "ENAME": "MARTIN", "COMM": 1400 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "37. Display employees whose salary is between 1500 and 3000, ordered by salary.", "query": "SELECT * FROM EMP WHERE SAL BETWEEN 1500 AND 3000 ORDER BY SAL;", "output_table": [
+      { "ENAME": "TURNER", "SAL": 1500 }, { "ENAME": "ALLEN", "SAL": 1600 }, { "ENAME": "CLARK", "SAL": 2450 },
+      { "ENAME": "BLAKE", "SAL": 2850 }, { "ENAME": "JONES", "SAL": 2975 }, { "ENAME": "SCOTT", "SAL": 3000 },
+      { "ENAME": "FORD", "SAL": 3000 }
+  ]},
+  { "group": " ORDER BY Clause", "question": "38. Display employee name and department, ordered by department and name.", "query": "SELECT ENAME, DEPTNO FROM EMP ORDER BY DEPTNO, ENAME;", "output_table": [
+      { "ENAME": "CLARK", "DEPTNO": 10 }, { "ENAME": "KING", "DEPTNO": 10 }, { "ENAME": "MILLER", "DEPTNO": 10 },
+      { "ENAME": "ADAMS", "DEPTNO": 20 }, { "ENAME": "FORD", "DEPTNO": 20 }
+  ]},
+  { "group": " ALIAS ", "question": "39. Display employee name as Employee_Name.", "query": "SELECT ENAME AS Employee_Name FROM EMP;", "output_table": [{ "EMPLOYEE_NAME": "KING" }, { "EMPLOYEE_NAME": "BLAKE" }] },
+  { "group": " ALIAS ", "question": "40. Display salary as Monthly_Salary and (Salary * 12) as Annual_Salary.", "query": "SELECT ENAME, SAL AS Monthly_Salary, SAL * 12 AS Annual_Salary FROM EMP;", "output_table": [{ "ENAME": "KING", "MONTHLY_SALARY": 5000, "ANNUAL_SALARY": 60000 }] },
+  { "group": " ALIAS ", "question": "44. Display employee name as Name and salary as Pay for department 10.", "query": "SELECT ENAME AS Name, SAL AS Pay FROM EMP WHERE DEPTNO = 10;", "output_table": [{ "NAME": "KING", "PAY": 5000 }, { "NAME": "CLARK", "PAY": 2450 }, { "NAME": "MILLER", "PAY": 1300 }] },
+  { "group": " ALIAS ", "question": "41. Display department number as Dept_No.", "query": "SELECT DISTINCT DEPTNO AS Dept_No FROM EMP;", "output_table": [{ "DEPT_NO": 10 }, { "DEPT_NO": 20 }, { "DEPT_NO": 30 }] },
+  { "group": " ALIAS ", "question": "42. Display hire date as Joining_Date.", "query": "SELECT ENAME, HIREDATE AS Joining_Date FROM EMP;", "output_table": [{ "ENAME": "KING", "JOINING_DATE": "17-NOV-81" }] },
+  { "group": " ALIAS ", "question": "43. Display employee name, job, and salary with aliases, ordered by job.", "query": "SELECT ENAME AS Name, JOB AS Designation, SAL AS Salary FROM EMP ORDER BY Designation;", "output_table": [{ "NAME": "SCOTT", "DESIGNATION": "ANALYST", "SALARY": 3000 }] },
+  { "group": " ALIAS ", "question": "45. Display employees hired before 1982 with aliases, ordered by hire date.", "query": "SELECT ENAME AS Name, HIREDATE AS Joined FROM EMP WHERE HIREDATE < '01-JAN-82' ORDER BY Joined;", "output_table": [{ "NAME": "SMITH", "JOINED": "17-DEC-80" }, { "NAME": "ALLEN", "JOINED": "20-FEB-81" }] }
+]

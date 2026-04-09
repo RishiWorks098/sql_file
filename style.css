@@ -1,0 +1,250 @@
+/* --- SIMPLE & CLEAN DESIGN --- */
+
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #080807; /* Simple Orange for headings */
+    --bg-color: #fdfdfd;
+    --border-color: #dddddd;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    background: #ffffff;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* Main Content Area */
+.main-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #777;
+    font-size: 1.1rem;
+}
+
+/* Grid Layout for the Boxes */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* The Category Card (The Boxes) */
+.category-card {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid var(--border-color); /* Simple border */
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease; /* Smooth transition */
+    display: block;
+}
+
+/* Simple Hover: Background turns slightly grey and border darkens */
+.category-card:hover {
+    background-color: #f9f9f9;
+    border-color: #999;
+    transform: translateY(-3px); /* Subtle lift up */
+}
+
+.category-card h3 {
+    margin: 0 0 10px 0;
+    color: var(--accent-color); /* Orange Headings */
+    font-size: 1.25rem;
+}
+
+.category-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Special styling for PL/SQL card to make it stand out slightly */
+.plsql-card {
+    border-left: 4px solid var(--accent-color);
+}
+
+/* --- QUERIES PAGE EXTRA STYLE --- */
+.practice-container {
+    display: flex;
+    height: calc(100vh - 65px);
+}
+
+.sidebar {
+    width: 280px;
+    background: #f4f4f4;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#problemList {
+    list-style: none;
+    padding: 0;
+}
+
+#problemList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#problemList li:hover {
+    background: #e9e9e9;
+    color: var(--accent-color);
+}
+
+.main-display {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    overflow-y: auto;
+}
+
+.display-section {
+    margin-bottom: 30px;
+}
+
+.display-section label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #999;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.q-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.code-box, .output-box {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+}
+
+.output-box {
+    color: #050505; /* Green for output */
+    border-left: 4px solid #eef2f0;
+}
+
+#copyBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: white;
+}
+
+/* Sidebar Group Headings */
+.group-header {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+
+/* Sidebar Problems (Simple list) */
+#problemList li {
+    padding: 6px 10px 6px 20px;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    border: none; /* Borders hata diye simplicity ke liye */
+}
+
+#problemList li:hover {
+    color: #d35400;
+    background: #f4f4f4;
+}
+
+.oracle-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 0.85rem;
+    background: white;
+}
+
+.oracle-table th {
+    background-color: #f2f2f2;
+    color: #333;
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.oracle-table td {
+    padding: 6px 8px;
+    border: 1px solid #eee;
+    color: #444;
+}
+
+.oracle-table tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.oracle-table i {
+    color: #999; /* null values ke liye grey color */
+}
